@@ -21,7 +21,8 @@ This project utilizes ROS2 actions and the navigation stack to enable cooperativ
 
 - Languages: C++, Python
 - Framework: ROS2
-- Library : Aruco marker library, Nav2
+- Library  : Aruco marker library, Nav2
+- Skills   : Mapping, Calibration, Navigation
 
 ## Approach
 

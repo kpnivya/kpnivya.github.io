@@ -22,7 +22,7 @@ Tracking of the fin is a challenging problem because the number of waves produce
 
 - Languages: MATLAB
 - Framework: Deep Lab Cut (DLC)
-- Skills: Locomotion Dynamics, Principal Component Analysis, State Estimation
+- Skills   : Locomotion Dynamics, Principal Component Analysis, State Estimation
 
 ## Approach
 

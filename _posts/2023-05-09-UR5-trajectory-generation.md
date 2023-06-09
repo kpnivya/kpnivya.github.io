@@ -14,6 +14,7 @@ The goal here was to create dynamically reconfigurable parameters that sets the 
 - Languages: C++, Python
 - Framework: ROS2 
 - Library  : OROCOS Toolchain, KDL, Reflexxes  
+- Skills   : Trajectory Generation, Inverse Kinematics, UR5 Manipulator 
 
 ## Approach
 

@@ -3,30 +3,32 @@ title:  "Extended Kalman Filter for State Estimation of Mobile Robot"
 mathjax: true
 layout: post
 categories: media
-excerpt_img_url: ../assets/rocketLanding/ConvergenceWindow.png
 ---
 
 ## Overview and Motivation
 
-Resuable rockets pose an incredibly complex landing sequence problem. For this project I worked with another graduate student and this porject really focuses on the final stage of landing and the objective here is to use applied optimal control strategies for this application is to minimize the fuel consumed.
+State estimation helps in accurate feedback control of a system. IN mobile robotics space this plays an important role in mapping and navigation.
 
-- Languages: MATLAB, Python
-- Framework: ACADO Toolkit
-- Skills   : Optimal, Nonlinear Dynamics
+The objective of this project is to estimate the state of a Jackal robot using the GPU and IMU data. Kalman Filter is an optimal state estimator. Since the dynamics of the robot is nonlinear an Extended Kalman Filter(EKF) was used to estimate the state of the robot.  
+
+- Languages: C++
+- Framework: ROS
+- Software : Gazebo 
+- Skills   : Nonlinear Dynamics, Sensor Fusion
 
 ## Approach
 
-Since an elaborate dynamical model of the rocket is extremely complex, we start with a basic 2 DOF dynamic model. In this system, we have for states the position, $$[x,\ y]$$, velocity, $$(v)$$, mass, $$(m)$$ and the control input, $$[u_{T},\ u_{\theta}]$$ is the thrust and the angle of attack.
-Constraints were put on the control inputs, velocity, mass and the angle of attack. Boundary conditions were specified for the final positions and angle of attack, initial velovity and angle of attack(AOA). Optimization problem was solved by using final mass as the Mayer Term in ACADO through MATLAB interface.
+ROS Bags were provided with GPU data consisting of robot coordinates and IMU data consisting of orientation and angular velocity. Different functions were implemented for state prediction and state updation of the EKF. The Gazebo environment has a rocky terrain and hence the state of system considered was: $$[x,\ y,\ z,\ roll,\ pitch,\ yaw]$$. The control input to the system was: $$u\ =\ [v_t,\ \omega_{t}]$$ where $$v_t$$ and $$\omega_{t}$$ are the linear and angular velocities. 
 
-Once the convergence was met, this was extended to a 3-DOF system. Since the problem has both path and control constraints, Sequential Quadractic Programming(SQP) was used to solve this Nonlinear Programming(NLP) problem. 
+A linear transformation was used to convert GPU's geoemtric cooridnates data(latitude, longitude and altitude) to cartesian cooridnates. Jacobians were evaluated to develop system model and sensor model. Covariances for process noise and measurement noise was tuned based on the knowledge of initial pose and confidence on the sensor data. 
 
 ## Result
 
-Rocket velocities                          |  Convergence for the 3-DOF problem
-:-----------------------------------------:|:-------------------------:
-![](/assets/rocketLanding/Velocities.jpg)  |  ![](/assets/rocketLanding/ConvergenceWindow.png)
+![](/assets/EKF.jpg)
+Credits: Dr. Simon Leonard, Johns Hopkins University
+
+The algorithm could accurately estimate the 3D pose of the robot. An error of less than 0.5m was achieved for the 3D pose of the robot. 
 
 ## Challenges
-- The intial position, integration tolerance and tight constraints played a significant role in the convergence of the NLP problem. This was particularly challenging because of the control constraints on thurst, AOA, mass and velocities. 
-- This project does not address the dynamics of pitch angle and heading angle.  
+- Hard to tune the covariances to work for corner cases like around a canyon. Posterior error might increase. 
+

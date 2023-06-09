@@ -14,7 +14,7 @@ Move and Place is a very common industrial application of robotic arms. In my fi
 
 - Languages: MATLAB
 - Sottware : ROS
-- Skills : Inverse Kinematics, Trajectory Generation
+- Skills   : Inverse Kinematics, Trajectory Generation
 
 ## Approach
 

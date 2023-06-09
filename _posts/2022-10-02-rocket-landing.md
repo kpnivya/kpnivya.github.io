@@ -12,7 +12,7 @@ Resuable rockets pose an incredibly complex landing sequence problem. For this p
 
 - Languages: MATLAB, Python
 - Framework: ACADO Toolkit
-- Skills: Optimal, Nonlinear Dynamics
+- Skills   : Optimal, Nonlinear Dynamics
 
 ## Approach
 

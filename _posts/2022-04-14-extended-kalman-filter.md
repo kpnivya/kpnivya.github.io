@@ -3,6 +3,7 @@ title:  "Extended Kalman Filter for State Estimation of Mobile Robot"
 mathjax: true
 layout: post
 categories: media
+excerpt_img_url: ../assets/EKF.png
 ---
 
 ## Overview and Motivation
@@ -25,7 +26,6 @@ A linear transformation was used to convert GPU's geoemtric cooridnates data(lat
 ## Result
 
 ![](/assets/EKF.jpg)
-Credits: Dr. Simon Leonard, Johns Hopkins University
 
 The algorithm could accurately estimate the 3D pose of the robot. An error of less than 0.5m was achieved for the 3D pose of the robot. 
 

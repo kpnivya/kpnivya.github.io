@@ -20,6 +20,7 @@ of obstacles and to design a controller that tracks the path found. The two diff
 trajectory generation and trajectory tracking.
 
 - Languages: MATLAB
+- Skills: Nonlinear Control, Trajectory Generation, Trajectory Tracking, Path Planning 
 
 ## Approach
 

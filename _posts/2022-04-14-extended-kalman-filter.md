@@ -25,7 +25,7 @@ A linear transformation was used to convert GPU's geoemtric cooridnates data(lat
 
 ## Result
 
-![](/assets/EKF.jpg)
+![](/assets/EKF.png)
 
 The algorithm could accurately estimate the 3D pose of the robot. An error of less than 0.5m was achieved for the 3D pose of the robot. 
 
